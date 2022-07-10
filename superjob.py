@@ -2,10 +2,7 @@ import requests
 import math
 import os
 from salary_helpers import get_two_params
-from dotenv import load_dotenv
 
-load_dotenv()
-super_job_key = os.environ['SUPER_JOB_SECRET_KEY']
 
 def get_all_vacancies_sj(page, vacancy):
     url = "https://api.superjob.ru/2.0/vacancies"
@@ -30,7 +27,7 @@ def get_all_vacancies_sj(page, vacancy):
     return all_vacancies_info, page_response.json()['total']
 
 
-def predict_rub_salary_sj(language):
+def predict_salary_sj(language):
     vacancies_info, vacancies_found = get_all_vacancies_sj(page=0, vacancy=f'Программист {language}')
     all_middle_salary = 0
     vacancies_processed = 0

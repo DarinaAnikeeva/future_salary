@@ -12,7 +12,8 @@ def predict_salary(salary_from, salary_to):
 
 
 def get_vacancies(function):
-    languages = ["JavaScript", "Python", "Java", "C", "C++", "PHP", "CSS", "C#"]
+    languages = ["JavaScript", "Python"]
+        # , "Java", "C", "C++", "PHP", "CSS", "C#"]
     vacancies = {}
     for language in languages:
         average_salary, vacancies_processed, vacancies_found = function(language)
